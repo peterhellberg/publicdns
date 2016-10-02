@@ -31,6 +31,8 @@ func main() {
 		rrType = publicdns.CNAME
 	case "MX":
 		rrType = publicdns.MX
+	case "PTR":
+		rrType = publicdns.PTR
 	default:
 		rrType = publicdns.ANY
 	}

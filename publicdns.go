@@ -15,6 +15,7 @@ const (
 	AAAA  RRType = "AAAA"
 	CNAME RRType = "CNAME"
 	MX    RRType = "MX"
+	PTR   RRType = "PTR"
 	ANY   RRType = "ANY"
 )
 
