@@ -50,9 +50,7 @@ type Client struct {
 }
 
 func (c *Client) Resolve(name string, rrType RRType) (*Response, error) {
-	rawurl := fmt.Sprintf("https://dns.google.com/resolve?name=%s&type=%s", name, rrType)
-
-	resp, err := c.httpClient.Get(rawurl)
+	resp, err := c.httpClient.Get(rawurl(name, rrType))
 	if err != nil {
 		return nil, err
 	}
@@ -61,7 +59,7 @@ func (c *Client) Resolve(name string, rrType RRType) (*Response, error) {
 		resp.Body.Close()
 	}()
 
-	r := &Response{}
+	r := &Response{Questions: []Question{}, Answers: []Answer{}}
 
 	if err := json.NewDecoder(resp.Body).Decode(r); err != nil {
 		return nil, err
@@ -72,4 +70,8 @@ func (c *Client) Resolve(name string, rrType RRType) (*Response, error) {
 
 func Resolve(name string, rrType RRType) (*Response, error) {
 	return DefaultClient.Resolve(name, rrType)
+}
+
+func rawurl(name string, rrType RRType) string {
+	return fmt.Sprintf("https://dns.google.com/resolve?name=%s&type=%s", name, rrType)
 }
