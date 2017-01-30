@@ -1,6 +1,7 @@
 # publicdns
 
 [![Build Status (master)](https://travis-ci.org/peterhellberg/publicdns.svg?branch=master)](https://travis-ci.org/peterhellberg/publicdns)
+[![Go Report Card](https://goreportcard.com/badge/github.com/peterhellberg/publicdns)](https://goreportcard.com/report/github.com/peterhellberg/publicdns)
 [![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg?style=flat)](https://godoc.org/github.com/peterhellberg/publicdns)
 [![License MIT](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://github.com/peterhellberg/publicdns/blob/master/LICENSE)
 
