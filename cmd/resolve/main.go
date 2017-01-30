@@ -16,7 +16,7 @@ func main() {
 	name := flag.Arg(0)
 
 	if name == "" {
-		fmt.Println("Usage: resolve hostname [A,AAAA,CNAME,MX,PTR,ANY]\n")
+		fmt.Println("Usage: resolve hostname [A,AAAA,CNAME,MX,PTR,ANY]")
 		os.Exit(1)
 	}
 
